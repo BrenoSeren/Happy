@@ -9,8 +9,7 @@
 </head>
 <body>
     <h1>Cadastro Doação</h1>
-    <form method="post" action="/createDoacao/">
-    <!-- <form method="post" action="{% if db %}/updateDoacao/{{db.id}}/{% else %}/createDoacao/{% endif %}"> -->
+    <form method="post" action="{% if db %}/updateDoacao/{{db.id}}/{% else %}/createDoacao/{% endif %}">
         {% csrf_token %}
         <label for="Instituicoes">Instituição</label><br>
         <select name="Instituicoes" id="Instituicoes">

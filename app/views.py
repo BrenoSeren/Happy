@@ -73,6 +73,22 @@ def update2(req, pk):
         form.save()
         return redirect('home')
 
+def editDoacao(req, pk):
+    data = {}
+    data['db'] = Doacao.objects.get(pk = pk)
+    data['doacao'] = DoacaoForm(instance=data['db'])
+    data['institutions'] = Institution.objects.values('id', 'email')
+    data['users'] = User.objects.values('id', 'email')
+    return render(req, 'doacao.html', data)
+
+def updateDoacao(req, pk):
+    data = {}
+    data['db'] = Doacao.objects.get(pk = pk)
+    form = DoacaoCompForm(req.POST or None, instance=data['db'])
+    if form.is_valid():
+        form.save()
+        return redirect('home')
+
 def delete(req, pk):
     db = Institution.objects.get(pk = pk)
     db.delete()
