@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from app.forms import InstitutionForm, UserForm
+from app.forms import DoacaoForm, InstitutionForm, UserForm
 from app.models import Institution, User
 
 def home(req):
@@ -33,7 +33,8 @@ def create2(req):
 def doacao(req):
     data = {
         'institutions': Institution.objects.values('id', 'email'),
-        'users' : User.objects.values('id', 'email')
+        'users' : User.objects.values('id', 'email'),
+        'doacao' : DoacaoForm()
     }
     return render(req, 'doacao.html', data)
 

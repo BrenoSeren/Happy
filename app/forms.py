@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from app.models import Institution, User
+from app.models import Doacao, Institution, User
 
 class InstitutionForm(ModelForm):
     class Meta:
@@ -16,4 +16,11 @@ class UserForm(ModelForm):
         fields = [
             'name', 'email', 'celular',
             # 'Cidade_id_cidade', 'Estado_id_estado'
+        ]
+
+class DoacaoForm(ModelForm):
+    class Meta:
+        model = Doacao
+        fields = [
+            'valor'
         ]
