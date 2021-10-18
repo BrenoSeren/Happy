@@ -1,11 +1,12 @@
 from django.shortcuts import redirect, render
 from app.forms import DoacaoCompForm, DoacaoForm, InstitutionForm, UserForm
-from app.models import Institution, User
+from app.models import Doacao, Institution, User
 
 def home(req):
     data = {
         'institutions': Institution.objects.all(),
-        'users' : User.objects.all()
+        'users' : User.objects.all(),
+        'doacoes' : Doacao.objects.all()
     }
     return render(req, 'index.html', data)
 

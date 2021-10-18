@@ -86,6 +86,38 @@
         </tbody>
       </table>
 
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th scope="col"># ID</th>
+            <th scope="col">Id Instituicao</th>
+            <th scope="col">Id Usuario</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for doacao in doacoes %}
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th>{{doacao.id}}</th>
+                <td>{{doacao.Instituicoes_id}}</td>
+                <td>{{doacao.User_id}}</td>
+                <td>{{doacao.valor}}</td>
+                <td>
+                    <a href="" class="btn btn-primary">Editar</a>
+                    <a href="" class="btn btn-danger">Apagar</a>
+                </td>            
+            </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+
     <div class="button-group text-center">
         <a href="/cadastro"><input type="button" class="btn btn-primary btn-lg" value="Cadastro de Instituicao"></a>
         <a href="/cadastro2"><input type="button" class="btn btn-primary btn-lg" value="Cadastro de Clientes"></a>	
