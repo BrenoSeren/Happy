@@ -54,11 +54,11 @@ class User(models.Model):
     updated_at = models.TimeField(auto_now=True)
 
 class Doacao(models.Model):
-    Instituicoes_id = models.ForeignKey(
+    Instituicoes = models.ForeignKey(
         Institution,
         on_delete=models.CASCADE
     )
-    User_id = models.ForeignKey(
+    User = models.ForeignKey(
         User,
         on_delete=models.CASCADE
     ) 

@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from app.forms import DoacaoForm, InstitutionForm, UserForm
+from app.forms import DoacaoCompForm, DoacaoForm, InstitutionForm, UserForm
 from app.models import Institution, User
 
 def home(req):
@@ -18,6 +18,14 @@ def cadastro2(req):
     users = {'users': UserForm()}
     return render(req, 'cadastro2.html', users)
 
+def doacao(req):
+    data = {
+        'institutions': Institution.objects.values('id', 'email'),
+        'users' : User.objects.values('id', 'email'),
+        'doacao' : DoacaoForm()
+    }
+    return render(req, 'doacao.html', data)
+
 def create(req):
     form = InstitutionForm(req.POST or None)
     if form.is_valid():
@@ -30,13 +38,11 @@ def create2(req):
         form.save()
         return redirect('home')
 
-def doacao(req):
-    data = {
-        'institutions': Institution.objects.values('id', 'email'),
-        'users' : User.objects.values('id', 'email'),
-        'doacao' : DoacaoForm()
-    }
-    return render(req, 'doacao.html', data)
+def createDoacao(req):
+    form = DoacaoCompForm(req.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('home')
 
 def edit(req, pk):
     data = {}

@@ -24,3 +24,11 @@ class DoacaoForm(ModelForm):
         fields = [
             'valor'
         ]
+
+class DoacaoCompForm(ModelForm):
+    class Meta:
+        model = Doacao
+        fields = [
+            'Instituicoes', 'User',
+            'valor'
+        ]

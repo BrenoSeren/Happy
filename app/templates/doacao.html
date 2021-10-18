@@ -12,14 +12,14 @@
     <form method="post" action="/createDoacao/">
     <!-- <form method="post" action="{% if db %}/updateDoacao/{{db.id}}/{% else %}/createDoacao/{% endif %}"> -->
         {% csrf_token %}
-        <label for="Instituicoes_id">Instituição</label><br>
-        <select name="Instituicoes_id" id="Instituicoes_id">
+        <label for="Instituicoes">Instituição</label><br>
+        <select name="Instituicoes" id="Instituicoes">
             {% for institution in institutions %}
                 <option value="{{institution.id}}">{{institution.email}}</option>
             {% endfor %}
         </select><br><br>
-        <label for="User_id">Usuário</label><br>
-        <select name="User_id" id="User_id">
+        <label for="User">Usuário</label><br>
+        <select name="User" id="User">
             {% for user in users %}
                 <option value="{{user.id}}">{{user.email}}</option>
             {% endfor %}
