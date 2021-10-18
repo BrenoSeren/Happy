@@ -98,3 +98,8 @@ def delete2(req, pk):
     db = User.objects.get(pk = pk)
     db.delete()
     return redirect('home')
+
+def deleteDoacao(req, pk):
+    db = Doacao.objects.get(pk = pk)
+    db.delete()
+    return redirect('home')
