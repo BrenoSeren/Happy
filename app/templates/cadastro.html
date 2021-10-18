@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Cadastro Instituição</h1>
-    <form method="post" action="/create/">
+    <form method="post" action="{% if db %}/update/{{db.id}}/{% else %}/create/{% endif %}">
         {% csrf_token %}
         {{institutions.as_p}}
         <button type="submit" class="btn btn-success">Salvar</button>

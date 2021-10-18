@@ -29,3 +29,17 @@ def create2(req):
     if form.is_valid():
         form.save()
         return redirect('home')
+
+def edit(req, pk):
+    data = {}
+    data['db'] = Institution.objects.get(pk = pk)
+    data['institutions'] = InstitutionForm(instance=data['db'])
+    return render(req, 'cadastro.html', data)
+
+def update(req, pk):
+    data = {}
+    data['db'] = Institution.objects.get(pk = pk)
+    form = InstitutionForm(req.POST or None, instance=data['db'])
+    if form.is_valid():
+        form.save()
+        return redirect('home')
