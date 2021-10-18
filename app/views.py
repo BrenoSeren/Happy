@@ -43,3 +43,17 @@ def update(req, pk):
     if form.is_valid():
         form.save()
         return redirect('home')
+
+def edit2(req, pk):
+    data = {}
+    data['db'] = User.objects.get(pk = pk)
+    data['users'] = UserForm(instance=data['db'])
+    return render(req, 'cadastro2.html', data)
+
+def update2(req, pk):
+    data = {}
+    data['db'] = User.objects.get(pk = pk)
+    form = UserForm(req.POST or None, instance=data['db'])
+    if form.is_valid():
+        form.save()
+        return redirect('home')
