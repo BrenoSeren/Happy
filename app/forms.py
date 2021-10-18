@@ -5,8 +5,9 @@ class InstitutionForm(ModelForm):
     class Meta:
         model = Institution
         fields = [
-            'name', 'email', 'celular', 'atvidade', 'descricao',
-            'cep', 'bairro', 'endereco', 'Cidade_id_cidade', 'Estado_id_estado'
+            'name', 'email', 'celular', 'atividade', 'descricao',
+            'cep', 'bairro', 'endereco'
+            # , 'Cidade_id_cidade', 'Estado_id_estado'
         ]
 
 class UserForm(ModelForm):
@@ -14,5 +15,5 @@ class UserForm(ModelForm):
         model = User
         fields = [
             'name', 'email', 'celular',
-            'Cidade_id_cidade', 'Estado_id_estado'
+            # 'Cidade_id_cidade', 'Estado_id_estado'
         ]

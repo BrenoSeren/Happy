@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-        <title>Hello World</title>
+        <title>Happy</title>
 </head>
 <body>
 
@@ -14,11 +14,76 @@
     <div class="page-header text-center">
         <h1>Tela Inicial</h1>
     </div>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"># ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Celular</th>
+            <th scope="col">Atividade</th>
+            <th scope="col">Descricao</th>
+            <th scope="col">CEP</th>
+            <th scope="col">Bairro</th>
+            <th scope="col">Endereço</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for institution in institutions %}
+            <tr>
+                <th>{{institution.id}}</th>
+                <td>{{institution.name}}</td>
+                <td>{{institution.email}}</td>
+                <td>{{institution.celular}}</td>
+                <td>{{institution.atividade}}</td>
+                <td>{{institution.descricao}}</td>
+                <td>{{institution.cep}}</td>
+                <td>{{institution.bairro}}</td>
+                <td>{{institution.endereco}}</td>
+                <td>
+                    <a href="" class="btn btn-primary">Editar</a>
+                    <a href="" class="btn btn-danger">Apagar</a>
+                </td>
+            </tr>
+        {% endfor %}
+          
+        </tbody>
+      </table>
+     
+      <hr>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"># ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Celular</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <th>{{user.id}}</th>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.celular}}</td>
+                <td>
+                    <a href="" class="btn btn-primary">Editar</a>
+                    <a href="" class="btn btn-danger">Apagar</a>
+                </td>            
+            </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+
     <div class="button-group text-center">
         <a href="/cadastro"><input type="button" class="btn btn-primary btn-lg" value="Cadastro de Instituicao"></a>
-        <a href=""><input type="button" class="btn btn-primary btn-lg" value="Lista de Clientes"></a>	
+        <a href="/cadastro2"><input type="button" class="btn btn-primary btn-lg" value="Cadastro de Clientes"></a>	
     </div>	
-    {{estados}}
 </div>
 </body>
 </html>

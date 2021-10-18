@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Instituicao</title>
 </head>
 <body>
     <h1>Cadastro Instituição</h1>
-    {{institutions.as_p}}
+    <form method="post" action="/create/">
+        {% csrf_token %}
+        {{institutions.as_p}}
+        <button type="submit" class="btn btn-success">Salvar</button>
+    </form>
+    <a href="/" class="btn btn-info">Voltar</a>
 </body>
 </html>
