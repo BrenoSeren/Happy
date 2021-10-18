@@ -30,6 +30,13 @@ def create2(req):
         form.save()
         return redirect('home')
 
+def doacao(req):
+    data = {
+        'institutions': Institution.objects.values('id', 'email'),
+        'users' : User.objects.values('id', 'email')
+    }
+    return render(req, 'doacao.html', data)
+
 def edit(req, pk):
     data = {}
     data['db'] = Institution.objects.get(pk = pk)
