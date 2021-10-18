@@ -57,3 +57,13 @@ def update2(req, pk):
     if form.is_valid():
         form.save()
         return redirect('home')
+
+def delete(req, pk):
+    db = Institution.objects.get(pk = pk)
+    db.delete()
+    return redirect('home')
+
+def delete2(req, pk):
+    db = User.objects.get(pk = pk)
+    db.delete()
+    return redirect('home')

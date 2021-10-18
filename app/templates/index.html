@@ -44,7 +44,7 @@
                 <td>{{institution.endereco}}</td>
                 <td>
                     <a href="/edit/{{institution.id}}/" class="btn btn-primary">Editar</a>
-                    <a href="" class="btn btn-danger">Apagar</a>
+                    <a href="/delete/{{institution.id}}/" class="btn btn-danger">Apagar</a>
                 </td>
             </tr>
         {% endfor %}
@@ -73,7 +73,7 @@
                 <td>{{user.celular}}</td>
                 <td>
                     <a href="/edit2/{{user.id}}/" class="btn btn-primary">Editar</a>
-                    <a href="" class="btn btn-danger">Apagar</a>
+                    <a href="/delete2/{{user.id}}/" class="btn btn-danger">Apagar</a>
                 </td>            
             </tr>
         {% endfor %}
