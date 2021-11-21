@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app.views import delete2, home, cadastro, cadastro2, create, create2, edit, update, edit2, update2, delete, delete2, doacao, createDoacao, editDoacao, updateDoacao, deleteDoacao
+from map import views as map_views
 
 urlpatterns = [
     path('', home, name='home'),
@@ -34,4 +35,5 @@ urlpatterns = [
     path('editDoacao/<int:pk>/', editDoacao, name='editDoacao'),
     path('updateDoacao/<int:pk>/', updateDoacao, name='updateDoacao'),
     path('deleteDoacao/<int:pk>/', deleteDoacao, name='deleteDoacao'),
+    path('map', map_views.map, name='map'),
 ]
