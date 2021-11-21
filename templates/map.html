@@ -7,10 +7,10 @@
     <title>Mapa</title>
 </head>
 <body>
-    <form action="#" method="POST" enctype="multipart/form">
+    <form method="POST" enctype="multipart/form">
         {% csrf_token %}
         <input type="search" placeholder="Pesquisar" name="adress">
-        <button type="submit" name="btn-search"></button>
+        <button type="submit" name="btn-search">Pesquisar</button>
     </form>
     {{m|safe}}
 </body>

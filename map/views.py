@@ -4,14 +4,15 @@ import geocoder
 
 # Create your views here.
 def map(req):
-    # implement DB
-    # adress = req.POST.get('address')
-    location = geocoder.osm('adress')
+    adress = req.POST.get('address')
+    if (not adress):
+        adress = 'Marília'
+    location = geocoder.osm(adress)
     lat = location.lat
     lng = location.lng
     country = location.country
     # Create Map Object
-    m = folium.Map(location=[19,-12], zoom_start=2)
+    m = folium.Map(location=[-15.7801,-47.9292], zoom_start=4)
     folium.Marker([lat,lng], tooltip='Click for more information', popup=country).add_to(m)
     m = m._repr_html_()
     context={
