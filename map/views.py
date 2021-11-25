@@ -12,7 +12,7 @@ def map(req):
     lng = location.lng
     country = location.country
     # Create Map Object
-    m = folium.Map(location=[-15.7801,-47.9292], zoom_start=4)
+    m = folium.Map(location=[lat, lng], zoom_start=100)
     folium.Marker([lat,lng], tooltip='Clique para mais informações', popup=country).add_to(m)
     m = m._repr_html_()
     context={
