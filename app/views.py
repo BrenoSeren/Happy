@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from app.forms import DoacaoCompForm, DoacaoForm, InstitutionForm, UserForm
 from app.models import Doacao, Institution, User
-import win32com.client as win32
+# import win32com.client as win32
 
 def home(req):
     data = {
@@ -107,14 +107,14 @@ def deleteDoacao(req, pk):
     db.delete()
     return redirect('home')
 
-def enviarEmail(UserId):
-    outlook = win32.Dispatch('outlook.application')
-    email = outlook.CreateItem(0)
-
-    userEmail = User.objects.get(pk = UserId)
-    email.To = userEmail.email
-    email.Subject = 'Obrigado pela sua doação!'
-    email.HTMLBody = """
-        <h3>Obrigado pela sua colaboração!</h3>
-    """
-    email.Send()
+# def enviarEmail(UserId):
+#     outlook = win32.Dispatch('outlook.application')
+#     email = outlook.CreateItem(0)
+#
+#     userEmail = User.objects.get(pk = UserId)
+#     email.To = userEmail.email
+#     email.Subject = 'Obrigado pela sua doação!'
+#     email.HTMLBody = """
+#         <h3>Obrigado pela sua colaboração!</h3>
+#     """
+#     email.Send()

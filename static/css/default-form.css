@@ -1,0 +1,51 @@
+table{
+    margin: auto;
+    width: 100%;
+}
+form button{
+    float:right;
+}
+form input{
+    margin-bottom: 5px;
+    height: 40px;
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgb(73 80 87);
+    background-color: rgb(255 255 255);
+    background-clip: padding-box;
+    border: 1px solid rgb(206 212 218);
+    border-radius: 0.25rem;
+}
+form select{
+    margin-bottom: 5px;
+    height: 40px;
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgb(73 80 87);
+    background-color: rgb(255 255 255);
+    background-clip: padding-box;
+    border: 1px solid rgb(206 212 218);
+    border-radius: 0.25rem;
+}
+form textarea{
+    margin-bottom: 5px;
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgb(73 80 87);
+    background-color: rgb(255 255 255);
+    background-clip: padding-box;
+    border: 1px solid rgb(206 212 218);
+    border-radius: 0.25rem;
+}
+.form_father h1{
+    margin-bottom: 20px;
+}

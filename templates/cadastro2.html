@@ -5,15 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/default-form.css' %}">
     <title>Usuário</title>
 </head>
+
 <body>
-    <h1>Cadastro Usuário</h1>
-    <form method="post" action="{% if db %}/update2/{{db.id}}/{% else %}/create2/{% endif %}">
-        {% csrf_token %}
-        {{users.as_p}}
-        <button type="submit" class="btn btn-success">Salvar</button>
-    </form>
-    <a href="/" class="btn btn-info">Voltar</a>
+    <div class="col-md-5 form_father" style="margin: 50px auto">
+        <h1 class="text-center title">Cadastro Cliente</h1>
+        <form method="post" action="{% if db %}/update2/{{db.id}}/{% else %}/create2/{% endif %}">
+            <div class="form-group">
+                <table>
+                    {% csrf_token %}
+                    {{users.as_p}}
+                    <tr>
+                        <th></th>
+                        <td><br><br><a href="/" class="btn btn-info col-md-2">Voltar</a><button type="submit" class="btn btn-success col-md-2">Salvar</button></td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
